@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GRT.DAL.Models.Menus
 {
-    public sealed class MenuAttributeValueTranslate
+    public sealed class MenuAttributeValueTranslateDal
     {
         public Int32 MenuAttributeValueId { get; set; }
         public Int32 LanguageId { get; set; }

@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace GRT.DAL.Models.Menus
 {
-    public sealed class MenuAttribute
+    public sealed class MenuDal
     {
         public Int32 Id { get; set; }
+        public Int32 SubmenuId { get; set; }
     }
 }

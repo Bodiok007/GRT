@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace GRT.DAL.Models.Menus
 {
-    public sealed class MenuAttributeValue
+    public sealed class MenuTranslateDal
     {
-        public Int32 Id { get; set; }
         public Int32 MenuId { get; set; }
-        public Int32 MenuAttributeId { get; set; }
+        public Int32 LanguageId { get; set; }
+        public String MenuName { get; set; }
     }
 }
