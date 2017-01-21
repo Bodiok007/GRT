@@ -1,15 +1,11 @@
-﻿using Microsoft.Data.Entity;
-using Microsoft.Data.Entity.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace GRT.DAL.Configuration.MappingConfiguration
 {
     public interface IEntityMappingConfiguration
     {
-        void Map(ModelBuilder builder);
+        void Map(ModelBuilder modelBuilder);
     }
 
     public interface IEntityMappingConfiguration<T> : IEntityMappingConfiguration where T : class
