@@ -13,6 +13,7 @@ namespace GRT.DAL.Models.Menus
         public Int32 MenuAttributeValueId { get; set; }
         public Int32 LanguageId { get; set; }
         public String Value { get; set; }
+
         public virtual MenuAttributeValueDal MenuAttributeValue { get; set; }
         public virtual LanguageDal Language { get; set; }
     }

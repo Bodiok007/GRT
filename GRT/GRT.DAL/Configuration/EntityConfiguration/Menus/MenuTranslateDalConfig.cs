@@ -2,14 +2,10 @@
 using GRT.DAL.Models.Menus;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace GRT.DAL.Configuration.EntityConfiguration
+namespace GRT.DAL.Configuration.EntityConfiguration.Menus
 {
-    public sealed class MenuTranslateDalConfiguration : EntityMappingConfiguration<MenuTranslateDal>
+    public sealed class MenuTranslateDalConfig : EntityMappingConfiguration<MenuTranslateDal>
     {
         public override void Map(EntityTypeBuilder<MenuTranslateDal> builder)
         {

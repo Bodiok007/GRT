@@ -15,6 +15,7 @@ namespace GRT.DAL.Models.Menus
         public Int32 Id { get; set; }
         public Int32 MenuId { get; set; }
         public Int32 MenuAttributeId { get; set; }
+
         public virtual MenuDal Menu { get; set; }
         public virtual MenuAttributeDal MenuAttribute { get; set; }
         public virtual ICollection<MenuAttributeValueTranslateDal> MenuAttributeValueTranslates { get; set; }
