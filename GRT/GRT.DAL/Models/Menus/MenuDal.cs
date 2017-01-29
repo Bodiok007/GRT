@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GRT.DAL.Models.UserProject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -16,9 +17,10 @@ namespace GRT.DAL.Models.Menus
 
         public Int32 Id { get; set; }
         public Int32? SubmenuId { get; set; }
-        public Int32? MenuAttributeId { get; set; }
+        public Int32 ProjectId { get; set; }
 
         public virtual MenuDal Submenu { get; set; }
+        public virtual ProjectDal Project { get; set; }
         public virtual ICollection<MenuTranslateDal> MenuTranslates { get; set; }
         public virtual ICollection<MenuAttributeValueDal> MenuAttributeValues { get; set; }
     }
