@@ -8,7 +8,7 @@ namespace GRT.DAL.Models.UserProject
     {
         public Int32 UserId { get; set; }
         public Int32 ProjetId { get; set; }
-        public Int32 PermissionlId { get; set; }
+        public Int32 PermissionId { get; set; }
 
         public virtual UserDal User { get; set; }
         public virtual ProjectDal Project { get; set; }

@@ -13,16 +13,8 @@ namespace GRT.DAL.Models.UserProject
         }
 
         public Int32 Id { get; set; }
-        public PermissionFlags Permissions;
+        public String Value { get; set; }
 
         public virtual ICollection<UserProjectPermissionDal> UserProjectPermissions { get; set; }
-    }
-
-    [Flags]
-    public enum PermissionFlags
-    {
-        Read = 1,
-        Write = 2,
-        All = Read | Write
     }
 }

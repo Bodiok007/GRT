@@ -1,6 +1,7 @@
 ﻿using GRT.DAL.Configuration.MappingConfiguration;
 using GRT.DAL.Models.UserProject;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
@@ -18,14 +19,14 @@ namespace GRT.DAL.Configuration.EntityConfiguration.UserProject
                 {
                     userProjPerm.UserId,
                     userProjPerm.ProjetId,
-                    userProjPerm.PermissionlId
+                    userProjPerm.PermissionId
                 });
 
             builder.HasOne(userProjPerm => userProjPerm.User)
                 .WithMany(user => user.UserProjectPermissions)
                 .HasForeignKey(userProjPerm => userProjPerm.UserId)
                 .IsRequired()
-                .HasConstraintName("FK_UserProjectPermission_User");
+                .HasConstraintName("FK_UserProjectPermission_User").OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(userProjPerm => userProjPerm.Project)
                 .WithMany(project => project.UserProjectPermissions)
@@ -35,7 +36,7 @@ namespace GRT.DAL.Configuration.EntityConfiguration.UserProject
 
             builder.HasOne(userProjPerm => userProjPerm.Permission)
                 .WithMany(permission => permission.UserProjectPermissions)
-                .HasForeignKey(userProjPerm => userProjPerm.PermissionlId)
+                .HasForeignKey(userProjPerm => userProjPerm.PermissionId)
                 .IsRequired()
                 .HasConstraintName("FK_UserProjectPermission_Permission");
         }
