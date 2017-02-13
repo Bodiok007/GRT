@@ -1,17 +1,16 @@
 ﻿using GRT.DAL.Models.UserProject;
 using GRT.DAL.Repositories.Base;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using GRT.DAL.Repositories.Interfaces;
 using System.Linq.Expressions;
-using GRT.DAL.Repositories.Interfaces.Operations;
+using GRT.DAL.Repositories.Interfaces.UserProject;
 
-namespace GRT.DAL.Repositories.EF
+namespace GRT.DAL.Repositories.EF.UserProject
 {
-    public sealed class UserRepository : BaseRepository<UserDal>, IUserRepository<UserDal> 
+    public sealed class UserRepository 
+        : BaseRepository<UserDal>, 
+          IUserRepository<UserDal> 
     {
         public UserRepository(DbContext dbContext) : base(dbContext)
         {
