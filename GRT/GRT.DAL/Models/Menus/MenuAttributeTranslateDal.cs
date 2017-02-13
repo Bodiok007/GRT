@@ -1,11 +1,10 @@
 ﻿using GRT.DAL.Models.Languages;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GRT.DAL.Models.Menus
 {
+    [Table(name: "MenuAttributeTranslate")]
     public class MenuAttributeTranslateDal
     {
         public Int32 MenuAttributeId { get; set; }
