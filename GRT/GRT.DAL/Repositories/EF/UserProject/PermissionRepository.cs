@@ -10,7 +10,7 @@ namespace GRT.DAL.Repositories.EF.UserProject
 {
     public sealed class PermissionRepository 
         : BaseRepository<PermissionDal>,
-          IPermissionRepository<PermissionDal>
+          IPermissionRepository<PermissionDal, Int32>
     {
         public PermissionRepository(DbContext dataContext) : base(dataContext)
         {
@@ -26,7 +26,7 @@ namespace GRT.DAL.Repositories.EF.UserProject
             return permissions;
         }
 
-        public PermissionDal GetById(object id)
+        public PermissionDal GetById(Int32 id)
         {
             var permission = _dbSet.Find();
 

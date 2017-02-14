@@ -10,7 +10,7 @@ namespace GRT.DAL.Repositories.EF.UserProject
 {
     public class ProjectRepository
         : BaseRepository<ProjectDal>,
-          IProjectRepository<ProjectDal>
+          IProjectRepository<ProjectDal, Int32>
     {
         public ProjectRepository(DbContext dataContext) : base(dataContext)
         {
@@ -41,7 +41,7 @@ namespace GRT.DAL.Repositories.EF.UserProject
             return projects;
         }
 
-        public ProjectDal GetById(object id)
+        public ProjectDal GetById(Int32 id)
         {
             var project = _dbSet.Find();
 

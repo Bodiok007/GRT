@@ -10,7 +10,7 @@ namespace GRT.DAL.Repositories.EF.UserProject
 {
     public sealed class UserRepository 
         : BaseRepository<UserDal>, 
-          IUserRepository<UserDal> 
+          IUserRepository<UserDal, Int32> 
     {
         public UserRepository(DbContext dbContext) : base(dbContext)
         {
@@ -37,7 +37,7 @@ namespace GRT.DAL.Repositories.EF.UserProject
             return users;
         }
 
-        public UserDal GetById(object id)
+        public UserDal GetById(Int32 id)
         {
             var user = _dbSet.Find();
 

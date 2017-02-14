@@ -2,9 +2,9 @@
 
 namespace GRT.DAL.Repositories.Interfaces.UserProject
 {
-    public interface IPermissionRepository<TEntity>
+    public interface IPermissionRepository<TEntity, TKey>
         : IGetRepositoryOparation<TEntity>,
-          IGetByIdRepositoryOperation<TEntity> where TEntity : class
+          IGetByIdRepositoryOperation<TEntity, TKey> where TEntity : class
     {
     }
 }
