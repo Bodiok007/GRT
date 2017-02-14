@@ -28,7 +28,7 @@ namespace GRT.DAL.Repositories.EF.UserProject
 
         public PermissionDal GetById(Int32 id)
         {
-            var permission = _dbSet.Find();
+            var permission = _dbSet.Find(id);
 
             return permission;
         }

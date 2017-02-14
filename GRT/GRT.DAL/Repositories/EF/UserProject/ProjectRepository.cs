@@ -43,7 +43,7 @@ namespace GRT.DAL.Repositories.EF.UserProject
 
         public ProjectDal GetById(Int32 id)
         {
-            var project = _dbSet.Find();
+            var project = _dbSet.Find(id);
 
             return project;
         }
