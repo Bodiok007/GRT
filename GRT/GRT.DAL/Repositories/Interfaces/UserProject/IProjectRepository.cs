@@ -6,7 +6,7 @@ namespace GRT.DAL.Repositories.Interfaces.UserProject
         : IGetRepositoryOparation<TEntity>,
           IGetByIdRepositoryOperation<TEntity, TKey>,
           IUpdateRepositoryOparation<TEntity>,
-          IDeleteRepositoryOparation<TEntity>,
+          IDeleteRepositoryOperation<TEntity>,
           IAddRepositoryOparation<TEntity> where TEntity : class
     {
     }

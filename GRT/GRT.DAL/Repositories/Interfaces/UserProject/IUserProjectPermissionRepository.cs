@@ -7,7 +7,7 @@ namespace GRT.DAL.Repositories.Interfaces.UserProject
           IGetByIdComplexKeyRepositoryOperation<TEntity>,
           IUpdateRepositoryOparation<TEntity>,
           IAddRepositoryOparation<TEntity>,
-          IDeleteRepositoryOparation<TEntity> where TEntity : class
+          IDeleteRepositoryOperation<TEntity> where TEntity : class
 
     {
     }
