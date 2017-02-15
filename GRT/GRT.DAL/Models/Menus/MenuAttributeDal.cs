@@ -10,11 +10,11 @@ namespace GRT.DAL.Models.Menus
         public MenuAttributeDal()
         {
             MenuAttributeValues = new List<MenuAttributeValueDal>();
-            MenuAttributes = new List<MenuAttributeTranslateDal>();
+            MenuAttributeTranslates = new List<MenuAttributeTranslateDal>();
         }
 
         public Int32 Id { get; set; }
         public virtual ICollection<MenuAttributeValueDal> MenuAttributeValues { get; set; }
-        public virtual ICollection<MenuAttributeTranslateDal> MenuAttributes { get; set; }
+        public virtual ICollection<MenuAttributeTranslateDal> MenuAttributeTranslates { get; set; }
     }
 }

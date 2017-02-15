@@ -14,7 +14,7 @@ namespace GRT.DAL.Configuration.EntityConfiguration.Menus
 
             builder
                 .HasOne(menuAttrTransl => menuAttrTransl.MenuAttribute)
-                .WithMany(menuAttr => menuAttr.MenuAttributes)
+                .WithMany(menuAttr => menuAttr.MenuAttributeTranslates)
                 .HasForeignKey(menuAttrVal => menuAttrVal.MenuAttributeId)
                 .IsRequired()
                 .HasConstraintName("FK_MenuAttributeTranslate_MenuAttribute");
