@@ -53,7 +53,7 @@ namespace GRT.DAL.Repositories.EF.Menus
         public void Update(MenuDal item)
         {
             _dbSet.Attach(item);
-            _dbContext.Entry(item).State = EntityState.Modified; throw new NotImplementedException();
+            _dbContext.Entry(item).State = EntityState.Modified;
         }
     }
 }
