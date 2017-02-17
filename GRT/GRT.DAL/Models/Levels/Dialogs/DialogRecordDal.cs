@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GRT.DAL.Models.Levels.Dialogs
 {
-    [Table(name: "DialogRecords")]
+    [Table(name: "DialogRecord")]
     public class DialogRecordDal
     {
         public DialogRecordDal()
