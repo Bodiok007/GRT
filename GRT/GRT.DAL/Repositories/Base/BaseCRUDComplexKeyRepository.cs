@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace GRT.DAL.Repositories.Base
 {
-    public class BaseCRUDComplexKeyRepository<TEntity>
+    public abstract class BaseCRUDComplexKeyRepository<TEntity>
         : BaseRepository<TEntity>,
           IGetRepositoryOparation<TEntity>,
           IGetByIdComplexKeyRepositoryOperation<TEntity>,

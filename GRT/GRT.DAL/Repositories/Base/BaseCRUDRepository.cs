@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GRT.DAL.Repositories.Base
 {
-    public class BaseCRUDRepository<TEntity, TKey>
+    public abstract class BaseCRUDRepository<TEntity, TKey>
         : BaseRepository<TEntity>, 
           IGetRepositoryOparation<TEntity>,
           IGetByIdRepositoryOperation<TEntity, TKey>,
