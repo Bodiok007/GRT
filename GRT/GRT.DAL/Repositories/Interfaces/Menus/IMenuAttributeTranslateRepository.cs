@@ -2,7 +2,7 @@
 
 namespace GRT.DAL.Repositories.Interfaces.Menus
 {
-    interface IMenuAttributeTranslateRepository<TEntity>
+    public interface IMenuAttributeTranslateRepository<TEntity>
         : IGetRepositoryOparation<TEntity>,
           IGetByIdComplexKeyRepositoryOperation<TEntity>,
           IUpdateRepositoryOparation<TEntity>,

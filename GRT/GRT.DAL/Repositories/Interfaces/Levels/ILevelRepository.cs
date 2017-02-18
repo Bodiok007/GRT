@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GRT.DAL.Repositories.Interfaces.Levels
 {
-    interface ILevelRepository<TEntity, TKey>
+    public interface ILevelRepository<TEntity, TKey>
         : IGetRepositoryOparation<TEntity>,
           IGetByIdRepositoryOperation<TEntity, TKey>,
           IUpdateRepositoryOparation<TEntity>,

@@ -2,7 +2,7 @@
 
 namespace GRT.DAL.Repositories.Interfaces.UserProject
 {
-    interface IProjectRepository<TEntity, TKey>
+    public interface IProjectRepository<TEntity, TKey>
         : IGetRepositoryOparation<TEntity>,
           IGetByIdRepositoryOperation<TEntity, TKey>,
           IUpdateRepositoryOparation<TEntity>,
