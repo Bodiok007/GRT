@@ -10,7 +10,7 @@ namespace GRT.DAL.Repositories.EF.Menus
 {
     public class MenuAttributeValueTranslateRepository
         : BaseRepository<MenuAttributeValueTranslateDal>,
-          IMenuTranslateRepository<MenuAttributeValueTranslateDal>
+          IMenuAttributeValueTranslateRepository<MenuAttributeValueTranslateDal>
     {
         public MenuAttributeValueTranslateRepository(DbContext dataContext) : base(dataContext)
         {
