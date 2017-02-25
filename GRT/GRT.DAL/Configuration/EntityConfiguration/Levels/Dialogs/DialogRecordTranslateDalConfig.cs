@@ -1,6 +1,7 @@
 ﻿using GRT.DAL.Configuration.MappingConfiguration;
 using GRT.DAL.Models.Levels.Dialogs;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace GRT.DAL.Configuration.EntityConfiguration.Levels.Dialogs
@@ -17,7 +18,8 @@ namespace GRT.DAL.Configuration.EntityConfiguration.Levels.Dialogs
                 .WithMany(record => record.DialogRecordTranslates)
                 .HasForeignKey(recordTransl => recordTransl.RecordId)
                 .IsRequired()
-                .HasConstraintName("FK_RecordTranslate_Record");
+                .HasConstraintName("FK_RecordTranslate_Record")
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder
                 .HasOne(recordTransl => recordTransl.Language)
