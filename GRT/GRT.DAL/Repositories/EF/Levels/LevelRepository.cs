@@ -51,7 +51,7 @@ namespace GRT.DAL.Repositories.EF.Levels
         public void Update(LevelDal item)
         {
             _dbSet.Attach(item);
-            _dbContext.Entry(item).State = EntityState.Modified; throw new NotImplementedException();
+            _dbContext.Entry(item).State = EntityState.Modified;
         }
     }
 }
