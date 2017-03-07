@@ -3,6 +3,7 @@ using GRT.DAL.Models.Languages;
 using GRT.DAL.Models.Levels;
 using GRT.DAL.Models.Levels.Dialogs;
 using GRT.DAL.Models.Menus;
+using GRT.DAL.Models.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -43,6 +44,8 @@ namespace CoreEFExp
         #endregion
 
         public DbSet<LanguageDal> Languages { get; set; }
+
+        public DbSet<TokenDal> Tokens { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

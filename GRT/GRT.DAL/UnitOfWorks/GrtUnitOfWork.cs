@@ -2,12 +2,14 @@
 using GRT.DAL.Models.Levels;
 using GRT.DAL.Models.Levels.Dialogs;
 using GRT.DAL.Models.Menus;
+using GRT.DAL.Models.Tokens;
 using GRT.DAL.Models.UserProject;
 using GRT.DAL.Repositories.Base;
 using GRT.DAL.Repositories.EF.Languages;
 using GRT.DAL.Repositories.EF.Levels;
 using GRT.DAL.Repositories.EF.Levels.Dialogs;
 using GRT.DAL.Repositories.EF.Menus;
+using GRT.DAL.Repositories.EF.Tokens;
 using GRT.DAL.Repositories.EF.UserProject;
 using GRT.DAL.Repositories.Interfaces.Languages;
 using GRT.DAL.Repositories.Interfaces.Levels;
@@ -293,6 +295,23 @@ namespace GRT.DAL.UnitOfWorks
 
         #endregion Levels
 
+        #region Tokens
+
+        public BaseCRUDRepository<TokenDal, Int32> TokenRepository
+        {
+            get
+            {
+                if (_tokenRepository == null)
+                {
+                    _tokenRepository = new TokenRepository(_context);
+                }
+
+                return _tokenRepository;
+            }
+        }
+
+        #endregion
+
         #region Languages
 
         public ILanguageRepository<LanguageDal, Int32> LanguageRepository
@@ -351,6 +370,8 @@ namespace GRT.DAL.UnitOfWorks
         private BaseCRUDRepository<DialogRecordDal, Int32> _dialogRecordRepository;
         private BaseCRUDComplexKeyRepository<DialogTextTranslateDal> _dialogTextTranslateRepository;
         private BaseCRUDComplexKeyRepository<DialogRecordTranslateDal> _dialogRecordTranslateRepository;
+
+        private BaseCRUDRepository<TokenDal, Int32> _tokenRepository;
 
         private ILanguageRepository<LanguageDal, Int32> _languageRepository;
 
