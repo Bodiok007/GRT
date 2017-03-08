@@ -11,7 +11,8 @@ namespace GRT.DAL.Models.Tokens
         public Int32 Id { get; set; }
         public Int32 UserId { get; set; }
         public String Value { get; set; }
-        public DateTime DateCreation { get; set; }
+        public DateTime CreationDate { get; set; }
+        public DateTime ExpiredDate { get; set; }
 
         public UserDal User { get; set; }
     }
