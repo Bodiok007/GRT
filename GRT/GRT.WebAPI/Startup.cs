@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using GRT.BLL.Mappers;
+using GRT.Logger.Managers;
+using GRT.Logger.Loggers;
+using GRT.Logger.Interfaces;
+using GRT.DAL.Repositories.Base;
+using System;
+using GRT.DAL.Models.Tokens;
+using GRT.DAL.Repositories.EF.Tokens;
+using Microsoft.EntityFrameworkCore;
+using GRT.DAL.Contexts;
+using CustomILogger = GRT.Logger.Interfaces.ILogger;
 
 namespace GRT.WebAPI
 {
@@ -38,6 +45,12 @@ namespace GRT.WebAPI
             services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddMvc();
+
+            services.AddSingleton(AutoMapperConfig.Configure());
+            services.AddSingleton<CustomILogger, Log4netLogger>();
+            services.AddSingleton<ILoggerManager, Log4netLoggerManager>();
+            services.AddSingleton<BaseCRUDRepository<TokenDal, Int32>, TokenRepository>();
+            services.AddSingleton<DbContext, GrtContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline
