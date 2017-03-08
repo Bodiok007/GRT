@@ -12,7 +12,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace GRT.WebAPI.Secure
+namespace GRT.WebAPI.Attributes.Secure
 {
     public sealed class TokenSecureAttribute : ActionFilterAttribute
     {
