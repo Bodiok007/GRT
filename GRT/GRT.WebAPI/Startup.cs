@@ -14,6 +14,9 @@ using GRT.DAL.Repositories.EF.Tokens;
 using Microsoft.EntityFrameworkCore;
 using GRT.DAL.Contexts;
 using CustomILogger = GRT.Logger.Interfaces.ILogger;
+using GRT.BLL.Managers.UserManagers;
+using GRT.DAL.Models.UserProject;
+using GRT.DAL.Repositories.EF.UserProject;
 
 namespace GRT.WebAPI
 {
@@ -51,6 +54,8 @@ namespace GRT.WebAPI
             services.AddSingleton<ILoggerManager, Log4netLoggerManager>();
             services.AddSingleton<BaseCRUDRepository<TokenDal, Int32>, TokenRepository>();
             services.AddSingleton<DbContext, GrtContext>();
+            services.AddSingleton<IUserManager, UserManager>();
+            services.AddSingleton<BaseCRURepository<UserDal, Int32>, UserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline

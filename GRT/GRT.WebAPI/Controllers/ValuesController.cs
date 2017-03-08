@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using GRT.WebAPI.Attributes.Secure;
 
 namespace GRT.WebAPI.Controllers
 {
@@ -11,6 +9,7 @@ namespace GRT.WebAPI.Controllers
     {
         // GET api/values
         [HttpGet]
+        //[TokenSecure]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
@@ -25,6 +24,7 @@ namespace GRT.WebAPI.Controllers
 
         // POST api/values
         [HttpPost]
+        [TokenSecure]
         public void Post([FromBody]string value)
         {
         }
