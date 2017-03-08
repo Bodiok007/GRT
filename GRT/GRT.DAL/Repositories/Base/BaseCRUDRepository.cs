@@ -18,12 +18,12 @@ namespace GRT.DAL.Repositories.Base
         {
         }
 
-        public void Add(TEntity item)
+        public virtual void Add(TEntity item)
         {
             _dbSet.Add(item);
         }
 
-        public void Delete(TEntity item)
+        public virtual void Delete(TEntity item)
         {
             if (_dbContext.Entry(item).State == EntityState.Detached)
             {
@@ -33,7 +33,7 @@ namespace GRT.DAL.Repositories.Base
             _dbSet.Remove(item);
         }
 
-        public IQueryable<TEntity> Get(
+        public virtual IQueryable<TEntity> Get(
             Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
             string includeProperties = null)
@@ -43,14 +43,14 @@ namespace GRT.DAL.Repositories.Base
             return items;
         }
 
-        public TEntity GetById(TKey id)
+        public virtual TEntity GetById(TKey id)
         {
             var item = _dbSet.Find(id);
 
             return item;
         }
 
-        public void Update(TEntity item)
+        public virtual void Update(TEntity item)
         {
             _dbSet.Attach(item);
             _dbContext.Entry(item).State = EntityState.Modified;

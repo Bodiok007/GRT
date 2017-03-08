@@ -60,7 +60,7 @@ namespace GRT.DAL.UnitOfWorks
             }
         }
 
-        public IUserRepository<UserDal, Int32> UserRepository
+        public BaseCRURepository<UserDal, Int32> UserRepository
         {
             get
             {
@@ -349,7 +349,7 @@ namespace GRT.DAL.UnitOfWorks
         private Boolean _disposed;
         private DbContext _context;
 
-        private IUserRepository<UserDal, Int32> _userRepository;
+        private BaseCRURepository<UserDal, Int32> _userRepository;
         private IProjectRepository<ProjectDal, Int32> _projectRepository;
         private IPermissionRepository<PermissionDal, Int32> _permssionRepository;
         private IUserProjectPermissionRepository<UserProjectPermissionDal> _userProjectPermissionRepository;
