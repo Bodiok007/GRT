@@ -1,11 +1,9 @@
 ﻿using GRT.Logger.Interfaces;
 using log4net;
 using log4net.Config;
+using log4net.Repository;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace GRT.Logger.Loggers
 {
@@ -16,10 +14,13 @@ namespace GRT.Logger.Loggers
         public Log4netLogger()
         {
             // All configuration details depends from your config file!!!
-            var repository = LogManager.CreateRepository(_repositoryName);
+            // Need to copy config file with folder to result directory!
+
+            ILoggerRepository loggerRepository = GetLoggerRepository();
+
             var configFile = GetConfigFile(GetConfigPath());
 
-            XmlConfigurator.Configure(repository, configFile);
+            XmlConfigurator.Configure(loggerRepository, configFile);
 
             _logger = LogManager.GetLogger(_repositoryName, _loggerName);
         }
@@ -129,7 +130,7 @@ namespace GRT.Logger.Loggers
                 AppContext.BaseDirectory 
                     + Path.DirectorySeparatorChar
                     + _configFileDir
-                    + Path.DirectorySeparatorChar, // is need?
+                    + Path.DirectorySeparatorChar,
                 _configFileName);
 
             return configPath;
@@ -140,6 +141,22 @@ namespace GRT.Logger.Loggers
             var configFile = new FileInfo(path);
 
             return configFile;
+        }
+
+        private ILoggerRepository GetLoggerRepository()
+        {
+            ILoggerRepository loggerRepository = null;
+
+            try
+            {
+                loggerRepository = LogManager.CreateRepository(_repositoryName);
+            }
+            catch (Exception ex)
+            {
+                loggerRepository = LogManager.GetRepository(_repositoryName);
+            }
+
+            return loggerRepository;
         }
 
         #endregion

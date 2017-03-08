@@ -2,7 +2,7 @@
 
 using GRT.Logger.Interfaces;
 
-namespace GRT.Logger.Interfaces
+namespace GRT.Logger.Managers
 {
     public class Log4netLoggerManager : ILoggerManager
     {

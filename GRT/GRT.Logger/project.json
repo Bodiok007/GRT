@@ -1,14 +1,24 @@
 ﻿{
   "version": "1.0.0-*",
 
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+
   "dependencies": {
     "log4net": "2.0.7",
-    "NETStandard.Library": "1.6.0"
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.1.0"
+    }
   },
 
   "frameworks": {
-    "netstandard1.6": {
-      "imports": "dnxcore50"
+    "netcoreapp1.1": {
+      "imports": [
+        "dnxcore50",
+        "portable-net452+win81"
+      ]
     }
   }
 }
