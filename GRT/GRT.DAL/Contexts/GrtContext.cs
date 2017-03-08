@@ -10,7 +10,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace CoreEFExp
+namespace GRT.DAL.Contexts
 {
     public class GrtContext : DbContext
     {
